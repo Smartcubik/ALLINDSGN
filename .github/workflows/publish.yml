@@ -1,0 +1,72 @@
+name: Публикация постов allindsgn (пн/ср/пт)
+
+on:
+  schedule:
+    - cron: '0 3 * * 1,3,5'
+    - cron: '0 5 * * 1,3,5'
+    - cron: '0 9 * * 1,3,5'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    outputs:
+      post_id: ${{ steps.find.outputs.post_id }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - id: find
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_OWNER_CHAT_ID: ${{ secrets.TELEGRAM_OWNER_CHAT_ID }}
+        run: python notify.py
+
+      - name: Зафиксировать статус "notified"
+        if: steps.find.outputs.post_id != ''
+        run: |
+          git config user.name "allindsgn-bot"
+          git config user.email "bot@allindsgn.local"
+          git add posts.json
+          git commit -m "notify: post ${{ steps.find.outputs.post_id }}" || echo "nothing to commit"
+          git push
+
+  publish:
+    needs: notify
+    if: needs.notify.outputs.post_id != ''
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - env:
+          POST_ID: ${{ needs.notify.outputs.post_id }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          PUBLIC_ASSETS_BASE_URL: ${{ vars.PUBLIC_ASSETS_BASE_URL }}
+        run: python publish.py
+
+      - name: Зафиксировать статус "published"
+        run: |
+          git config user.name "allindsgn-bot"
+          git config user.email "bot@allindsgn.local"
+          git pull --rebase
+          git add posts.json
+          git commit -m "publish: post ${{ needs.notify.outputs.post_id }}" || echo "nothing to commit"
+          git push
