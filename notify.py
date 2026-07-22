@@ -16,7 +16,7 @@ from datetime import datetime, timedelta
 
 from tz_utils import now_tashkent, TASHKENT_TZ
 
-POSTS_PATH = "data/posts.json"
+POSTS_PATH = "posts.json"
 
 BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 OWNER_CHAT_ID = os.environ["TELEGRAM_OWNER_CHAT_ID"]
