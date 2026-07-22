@@ -19,8 +19,8 @@ import time
 import urllib.request
 import urllib.parse
 
-POSTS_PATH = "data/posts.json"
-CATALOG_PATH = "data/photo_catalog.json"
+POSTS_PATH = "posts.json"
+CATALOG_PATH = "photo_catalog.json"
 
 BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 CHANNEL_ID = os.environ["TELEGRAM_CHANNEL_ID"]
