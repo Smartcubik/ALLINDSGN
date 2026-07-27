@@ -45,18 +45,14 @@ def main():
         posts = json.load(f)
 
     now = now_tashkent()
-    today = now.date().isoformat()
+    today = now.date()
 
     match = None
-    for post in posts:
-        if post["date"] != today:
-            continue
+    for post in sorted(posts, key=lambda p: p["date"]):
         if post["status"] != "pending":
             continue
-        hh, mm = map(int, post["time_tashkent"].split(":"))
-        target = now.replace(hour=hh, minute=mm, second=0, microsecond=0)
-        diff_minutes = (target - now).total_seconds() / 60
-        if 0 <= diff_minutes <= 90:
+        post_date = datetime.strptime(post["date"], "%Y-%m-%d").date()
+        if post_date <= today:
             match = post
             break
 
