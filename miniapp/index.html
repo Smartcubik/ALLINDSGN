@@ -165,8 +165,14 @@
     font-size:11px;
     color:var(--graphite);
     letter-spacing:0.03em;
-    margin-bottom:14px;
+    margin-bottom:8px;
     text-transform:uppercase;
+  }
+  .tariff-desc{
+    font-size:12.5px;
+    color:#D8D5CC;
+    line-height:1.5;
+    margin:0 0 14px;
   }
   .tariff-list{
     list-style:none;
@@ -418,19 +424,20 @@
   <section class="view active" id="view-tariffs">
     <p class="eyebrow" data-ru="Прайс" data-uz="Narx">Прайс</p>
     <h1 data-ru="Тарифы на техническую документацию" data-uz="Texnik hujjatlar tariflari">Тарифы на техническую документацию</h1>
-    <p class="lead" data-ru="Цена — за м² площади квартиры. Полный комплект чертежей одинаков для всех тарифов, разница — в сроках." data-uz="Narx — kvartira maydoni m² uchun. Chizmalar to‘plami barcha tariflarda bir xil, farq — muddatda.">Цена — за м² площади квартиры. Полный комплект чертежей одинаков для всех тарифов, разница — в сроках.</p>
+    <p class="lead" data-ru="Цена — за м² площади квартиры. Технический проект для квартир." data-uz="Narx — kvartira maydoni m² uchun. Kvartiralar uchun texnik loyiha.">Цена — за м² площади квартиры. Технический проект для квартир.</p>
 
     <div class="tariff-card">
       <div class="tariff-top">
         <div class="tariff-name">Лайт</div>
         <div class="tariff-price">$4<span> /м²</span></div>
       </div>
-      <div class="tariff-meta" data-ru="До 7 рабочих дней" data-uz="7 ish kunigacha">До 7 рабочих дней</div>
+      <div class="tariff-meta" data-ru="Базовый пакет" data-uz="Bazaviy paket">Базовый пакет</div>
+      <p class="tariff-desc" data-ru="То, что нужно, чтобы ремонт стартовал без хаоса на объекте." data-uz="Ta’mirlash ob’ektda tartibsizliksiz boshlanishi uchun zarur bo‘lgani.">То, что нужно, чтобы ремонт стартовал без хаоса на объекте.</p>
       <ul class="tariff-list">
-        <li><span data-ru="Планировочные решения" data-uz="Rejalashtirish yechimlari">Планировочные решения</span><span class="feat-muted" data-ru="Расстановка мебели, зонирование" data-uz="Mebel joylashuvi, zonalash">Расстановка мебели, зонирование</span></li>
-        <li><span data-ru="Чертежи полов" data-uz="Pol chizmalari">Чертежи полов</span><span class="feat-muted" data-ru="Раскладка, высоты, материалы" data-uz="Yotqizish, balandliklar, materiallar">Раскладка, высоты, материалы</span></li>
-        <li><span data-ru="Чертежи потолков" data-uz="Shift chizmalari">Чертежи потолков</span><span class="feat-muted" data-ru="Высоты, короба, ниши" data-uz="Balandliklar, korobka, nishalar">Высоты, короба, ниши</span></li>
-        <li><span data-ru="Основная документация" data-uz="Asosiy hujjatlar">Основная документация</span><span class="feat-muted" data-ru="PDF-комплект" data-uz="PDF to‘plami">PDF-комплект</span></li>
+        <li><span data-ru="Обмеры" data-uz="O‘lchashlar">Обмеры</span></li>
+        <li><span data-ru="Планировка" data-uz="Rejalashtirish">Планировка</span></li>
+        <li><span data-ru="Электрика" data-uz="Elektr">Электрика</span></li>
+        <li><span data-ru="Сантехника" data-uz="Santexnika">Сантехника</span></li>
       </ul>
     </div>
 
@@ -440,13 +447,13 @@
         <div class="tariff-name">Стандарт</div>
         <div class="tariff-price">$5<span> /м²</span></div>
       </div>
-      <div class="tariff-meta" data-ru="До 14 рабочих дней" data-uz="14 ish kunigacha">До 14 рабочих дней</div>
+      <div class="tariff-meta" data-ru="Расширенный пакет" data-uz="Kengaytirilgan paket">Расширенный пакет</div>
+      <p class="tariff-desc" data-ru="С более детальной проработкой инженерных решений." data-uz="Muhandislik yechimlarini batafsil ishlab chiqish bilan.">С более детальной проработкой инженерных решений.</p>
       <ul class="tariff-list">
-        <li><span data-ru="Всё из тарифа Лайт" data-uz="Layt tarifidagi barchasi">Всё из тарифа Лайт</span></li>
-        <li><span data-ru="Электрика" data-uz="Elektr">Электрика</span><span class="feat-muted" data-ru="Розетки, выключатели, освещение" data-uz="Rozetkalar, o‘chirgichlar, yoritish">Розетки, выключатели, освещение</span></li>
-        <li><span data-ru="Сантехника" data-uz="Santexnika">Сантехника</span><span class="feat-muted" data-ru="Привязки, трассировки" data-uz="Bog‘lanishlar, trassalar">Привязки, трассировки</span></li>
-        <li><span data-ru="Развёртки всех стен" data-uz="Barcha devor yoyilmalari">Развёртки всех стен</span><span class="feat-muted" data-ru="Все помещения с размерами" data-uz="Barcha xonalar o‘lchamlari bilan">Все помещения с размерами</span></li>
-        <li><span data-ru="Спецификации" data-uz="Spetsifikatsiyalar">Спецификации</span><span class="feat-muted" data-ru="Ведомости материалов" data-uz="Materiallar ro‘yxati">Ведомости материалов</span></li>
+        <li><span data-ru="Всё из Лайт" data-uz="Layt tarifidagi barchasi">Всё из Лайт</span></li>
+        <li><span data-ru="Развёртки стен" data-uz="Devor yoyilmalari">Развёртки стен</span></li>
+        <li><span data-ru="Потолки" data-uz="Shiftlar">Потолки</span></li>
+        <li><span data-ru="Спецификация материалов" data-uz="Materiallar spetsifikatsiyasi">Спецификация материалов</span></li>
       </ul>
     </div>
 
@@ -455,17 +462,16 @@
         <div class="tariff-name">Премиум</div>
         <div class="tariff-price">$6<span> /м²</span></div>
       </div>
-      <div class="tariff-meta" data-ru="До 30 рабочих дней" data-uz="30 ish kunigacha">До 30 рабочих дней</div>
+      <div class="tariff-meta" data-ru="Максимальная детализация" data-uz="Maksimal detallashtirish">Максимальная детализация</div>
       <ul class="tariff-list">
-        <li><span data-ru="Всё из тарифа Стандарт" data-uz="Standart tarifidagi barchasi">Всё из тарифа Стандарт</span></li>
-        <li><span data-ru="Разработка индивидуальной мебели" data-uz="Individual mebel ishlab chiqish">Разработка индивидуальной мебели</span><span class="feat-muted" data-ru="Моделирование в Revit под объект" data-uz="Ob’ekt uchun Revitda modellashtirish">Моделирование в Revit под объект</span></li>
-        <li><span data-ru="Полные спецификации" data-uz="To‘liq spetsifikatsiyalar">Полные спецификации</span><span class="feat-muted" data-ru="По всем разделам и материалам" data-uz="Barcha bo‘lim va materiallar bo‘yicha">По всем разделам и материалам</span></li>
-        <li><span data-ru="Исходный файл Revit" data-uz="Revit manba fayli">Исходный файл Revit</span><span class="feat-muted" data-ru="По запросу" data-uz="So‘rov bo‘yicha">По запросу</span></li>
+        <li><span data-ru="Всё из Стандарт" data-uz="Standart tarifidagi barchasi">Всё из Стандарт</span></li>
+        <li><span data-ru="Разработка индивидуальной мебели" data-uz="Individual mebel ishlab chiqish">Разработка индивидуальной мебели</span></li>
+        <li><span data-ru="Полная спецификация всех материалов" data-uz="Barcha materiallarning to‘liq spetsifikatsiyasi">Полная спецификация всех материалов</span></li>
       </ul>
     </div>
 
-    <div class="note-box" data-ru="Квартиры свыше 100 м² — стоимость обсуждается индивидуально. Все тарифы включают сдачу в формате PDF + DWG." data-uz="100 m² dan katta kvartiralar — narx individual muhokama qilinadi. Barcha tariflar PDF + DWG formatida topshiriladi.">
-      Квартиры свыше 100 м² — стоимость обсуждается индивидуально. Все тарифы включают сдачу в формате PDF + DWG.
+    <div class="note-box" data-ru="Площадь свыше 100 м² — стоимость обсуждается индивидуально." data-uz="100 m² dan katta maydon — narx individual muhokama qilinadi.">
+      Площадь свыше 100 м² — стоимость обсуждается индивидуально.
     </div>
   </section>
 
