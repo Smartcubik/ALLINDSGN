@@ -263,6 +263,31 @@
   .project-stat b{display:block;font-size:16px;color:var(--gold-soft);}
   .project-stat span{font-size:10px;color:var(--graphite);text-transform:uppercase;letter-spacing:0.06em;}
   .project-desc{font-size:13px;line-height:1.6;color:#D8D5CC;}
+  .project-doc-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    margin-top:14px;
+    padding:12px 16px;
+    border:1px solid var(--gold);
+    border-radius:10px;
+    color:var(--gold-soft);
+    font-family:'JetBrains Mono',monospace;
+    font-size:11.5px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    text-decoration:none;
+    transition:background .15s ease;
+  }
+  .project-doc-btn:active{background:rgba(201,162,39,0.12);}
+  .project-doc-btn svg{width:15px;height:15px;flex:none;}
+  .project-doc-meta{
+    font-size:11px;
+    color:var(--graphite);
+    margin-top:6px;
+    text-align:center;
+  }
 
   /* ---------- CALCULATOR ---------- */
   .field-label{
@@ -502,6 +527,22 @@
         <div class="project-desc" data-ru="Как выглядит квартира на площадке после реализации технического проекта." data-uz="Texnik loyiha amalga oshirilgandan so‘ng kvartira maydonda qanday ko‘rinishi.">
           Как выглядит квартира на площадке после реализации технического проекта.
         </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="https://raw.githubusercontent.com/Smartcubik/ALLINDSGN/main/assets/photos/karasu2_tehproekt_cover.png" alt="Технический проект — Карасу 2">
+      <div class="project-body">
+        <div class="project-tag" data-ru="Полный проект · 58 листов" data-uz="To‘liq loyiha · 58 varaq">Полный проект · 58 листов</div>
+        <div class="project-title" data-ru="Технический проект — Карасу 2" data-uz="Texnik loyiha — Karasu 2">Технический проект — Карасу 2</div>
+        <div class="project-desc" data-ru="Полный комплект рабочей документации: обмеры, планировка, электрика и сантехника, потолки, полы, развёртки стен, спецификации и мебель индивидуального изготовления. Можно открыть и скачать." data-uz="To‘liq ishchi hujjatlar to‘plami: o‘lchash, rejalashtirish, elektr va santexnika, shiftlar, pollar, devor yoyilmalari, spetsifikatsiyalar va individual mebel. Ochish va yuklab olish mumkin.">
+          Полный комплект рабочей документации: обмеры, планировка, электрика и сантехника, потолки, полы, развёртки стен, спецификации и мебель индивидуального изготовления. Можно открыть и скачать.
+        </div>
+        <a class="project-doc-btn" href="https://raw.githubusercontent.com/Smartcubik/ALLINDSGN/main/assets/docs/Karasu2_tehproekt.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          <span data-ru="Открыть / скачать PDF" data-uz="PDF ochish / yuklab olish">Открыть / скачать PDF</span>
+        </a>
+        <div class="project-doc-meta" data-ru="PDF, ≈2.4 МБ, формат A3" data-uz="PDF, ≈2.4 MB, A3 format">PDF, ≈2.4 МБ, формат A3</div>
       </div>
     </div>
 
